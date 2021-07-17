@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="569.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+   <children>
+      <VBox prefHeight="569.0" prefWidth="600.0">
+         <children>
+            <SplitPane dividerPositions="0.15, 0.9" orientation="VERTICAL" prefHeight="572.0" prefWidth="569.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <VBox prefHeight="140.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane prefHeight="121.0" prefWidth="570.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Seleccione instancia a resolver">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button mnemonicParsing="false" onAction="#abrirInstancia" text="Seleccionar archivo" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Archivo seleccionado: " />
+                                    <Label fx:id="lblArchivoInstancia" />
+                                    <ButtonBar prefHeight="40.0" prefWidth="200.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane layoutX="5.0" layoutY="5.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <GridPane layoutX="185.0" layoutY="23.0" prefHeight="136.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="144.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="165.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="170.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="90.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Método de selección" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Spinner fx:id="tamañoTorneo" editable="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                              	<valueFactory>
+      				                <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="4" max="100" min="2" />
+      				            </valueFactory>
+                              </Spinner>
+                              <Label fx:id="lblParametroSeleccion" text="Tamaño del torneo" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="Método de cruce" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Método de mutación" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Probabilidad de cruce" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="Probabilidad de mutación" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="Tamaño de la población">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Spinner fx:id="spinnerPoblacion" editable="true" GridPane.columnIndex="1">
+                              	<valueFactory>
+      				                <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="2" initialValue="100" max="10000" min="2" />
+      				            </valueFactory>
+                              </Spinner>
+                              <Spinner fx:id="spinnerSobrevivientes" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="20" max="10000" min="0" />
+                                 </valueFactory>
+                              </Spinner>
+                              <Spinner fx:id="spinnerProbCruce" editable="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <valueFactory>
+                                    <SpinnerValueFactory.DoubleSpinnerValueFactory amountToStepBy="0.01" initialValue="0.6" max="1.0" min="0.0" />
+                                 </valueFactory>
+                              </Spinner>
+                              <Spinner fx:id="spinnerProbMutacion" editable="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <valueFactory>
+                                    <SpinnerValueFactory.DoubleSpinnerValueFactory amountToStepBy="0.01" initialValue="0.05" max="1.0" min="0.0" />
+                                 </valueFactory>
+                              </Spinner>
+                              <Label text="Inserción" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ComboBox fx:id="comboBoxCruce" prefHeight="25.0" prefWidth="167.0" promptText="Seleccione un método" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <Label text="Frecuencia de migración (0= sin migración)" wrapText="true" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Spinner fx:id="spinnerFrecMigra" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="0" max="10000" min="0" />
+                                 </valueFactory>
+                              </Spinner>
+                              <Spinner fx:id="spinnerCantMigra" editable="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                 <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="10000" min="0" />
+                                 </valueFactory>
+                              </Spinner>
+                              <Label text="Cantidad de nuevas soluciones" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="Condición de corte" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Spinner fx:id="spinnerCorte" editable="true" prefHeight="25.0" prefWidth="109.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="100" max="1000000" min="0" />
+                                 </valueFactory>
+                              </Spinner>
+                              <ComboBox fx:id="comboBoxCorte" prefHeight="25.0" prefWidth="167.0" promptText="Seleccione una condición" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Padres sobrevivientes     (0=reemplazo generacional)" wrapText="true" GridPane.rowIndex="4">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Torneo" GridPane.columnIndex="1" GridPane.rowIndex="1" /> 
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="570.0">
+                     <children>
+                        <GridPane alignment="CENTER_RIGHT" layoutX="185.0" layoutY="12.0" prefHeight="54.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.0" minWidth="10.0" prefWidth="382.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="364.0" minWidth="10.0" prefWidth="188.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Archivo de salida:" />
+                                    <TextField fx:id="archivoSalida" text="GA.txt" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button fx:id="botonEjecutar" mnemonicParsing="false" onAction="#ejecutarGA" text="Ejecutar" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Label fx:id="statusLabel" />
+               </items>
+            </ToolBar>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
